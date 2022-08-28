@@ -10,12 +10,17 @@ source_files = [
 'src/Object/Object.cpp',
 'src/Engine/Engine.cpp',
 'src/Boundary/Boundary.cpp',
-'src/Ball/Ball.cpp'
+'src/Ball/Ball.cpp',
+'src/Testing/Testing.cpp'
 ]
-
 
 sdl = dependency('sdl2')
 
+engine = static_library('engine', source_files, dependencies: sdl)
+enginedep = declare_dependency(link_with: engine)
+
 executable('demo',
-  source_files,
-  dependencies: sdl)
+  'src/main.cpp',
+  dependencies: [ 
+    enginedep
+    ])

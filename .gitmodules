@@ -1,6 +1,6 @@
 [submodule "glm"]
 	path = subprojects/glm
 	url = https://github.com/g-truc/glm
-[submodule "Catch2"]
-	path = subprojects/Catch2
-	url = https://github.com/catchorg/Catch2
+[submodule "SDL"]
+	path = subprojects/SDL
+	url = https://github.com/libsdl-org/SDL
