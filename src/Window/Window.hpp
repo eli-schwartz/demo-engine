@@ -4,7 +4,7 @@
 #include <memory>
 #include "../Object/Object.hpp"
 #include <string>
-#include "../../glm/glm/vec2.hpp"
+#include "../../subprojects/glm/glm/vec2.hpp"
 
 class Window {
 	private:
