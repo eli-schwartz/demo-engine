@@ -1,9 +1,12 @@
-#include <__HEADER__>
+#pragma once
 
-class Ball {
+#include "../Object/Object.hpp"
+
+class Ball: public Object {
 	private:
-
+		int radius;
 	public:
-		Ball();
+		Ball(glm::vec2&& pos, int radius);
 		~Ball();
+		virtual void Draw(SDL_Renderer* r) const override;
 };
