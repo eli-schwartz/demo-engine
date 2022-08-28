@@ -17,4 +17,5 @@ class Window {
 		void DrawObject(const std::shared_ptr<Object> &) const;
 		void Draw() const;
 		void Clear();
+		friend class Testing;
 };

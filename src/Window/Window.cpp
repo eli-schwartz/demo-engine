@@ -1,5 +1,6 @@
 #include "Window.hpp"
 #include <SDL2/SDL_video.h>
+#include <cassert>
 
 Window::Window(std::string&& name, int w, int h):
 window( SDL_CreateWindow(name.c_str(),
@@ -12,11 +13,15 @@ renderer( SDL_CreateRenderer(this->window,
 			SDL_RENDERER_ACCELERATED))
 {
 	SDL_Init(SDL_INIT_VIDEO);
+	assert(w > 0);
+	assert(h > 0);
 }
 
 Window::~Window(){
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
+	window = nullptr;
+	renderer = nullptr;
 }
 
 void Window::Draw() const{
