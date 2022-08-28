@@ -1,4 +1,4 @@
-#include <__HEADER__>
+#pragma once
 
 class Boundary {
 	private:
