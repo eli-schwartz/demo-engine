@@ -23,6 +23,11 @@ void Window::Draw() const{
 	SDL_RenderPresent(this->renderer);
 }
 
-void Window::DrawObject(const std::unique_ptr<Object>& o) const{
+void Window::DrawObject(const std::shared_ptr<Object>& o) const{
 	o->Draw(this->renderer);
+}
+
+void Window::Clear(){
+	SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 0);
+	SDL_RenderClear(this->renderer);
 }

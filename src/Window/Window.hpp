@@ -14,6 +14,7 @@ class Window {
 		Window() = delete;
 		Window(std::string && name = "demo",int width=800, int height=600);
 		~Window();
-		void DrawObject(const std::unique_ptr<Object> &) const;
+		void DrawObject(const std::shared_ptr<Object> &) const;
 		void Draw() const;
+		void Clear();
 };
