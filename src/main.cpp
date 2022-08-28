@@ -1,5 +1,6 @@
 #include "Engine/Engine.hpp"
 #include "Ball/Ball.hpp"
+#include <SDL2/SDL_events.h>
 
 int main(){
 	auto e = std::make_unique<Engine>(800, 600);
@@ -7,7 +8,8 @@ int main(){
 	e->PushObject(c);
 	for(int i=0; i<10; i++){
 		e->Draw();
-		c->Move(glm::vec2(10,0));
+		c->Move(glm::vec2(10,-20));
 		SDL_Delay(100);
 	}
+
 }
