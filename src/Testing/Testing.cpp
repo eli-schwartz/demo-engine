@@ -1,7 +1,6 @@
 #include "Testing.hpp"
 #include <iostream>
 #include <cassert>
-#include <catch2/catch_amalgamated.hpp>
 
 Testing::Testing():
 window("test", 800, 600),
