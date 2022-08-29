@@ -15,8 +15,8 @@ renderer( SDL_CreateRenderer(this->window,
 }
 
 Window::~Window(){
-	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
 }
 
 void Window::Draw() const{
