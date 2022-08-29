@@ -11,7 +11,6 @@ renderer( SDL_CreateRenderer(this->window,
 			-1,
 			SDL_RENDERER_ACCELERATED))
 {
-	SDL_Init(SDL_INIT_VIDEO);
 }
 
 Window::~Window(){
