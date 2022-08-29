@@ -12,16 +12,13 @@ renderer( SDL_CreateRenderer(this->window,
 			-1,
 			SDL_RENDERER_ACCELERATED))
 {
-	SDL_Init(SDL_INIT_VIDEO);
 	assert(w > 0);
 	assert(h > 0);
 }
 
 Window::~Window(){
-	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
-	window = nullptr;
-	renderer = nullptr;
+	SDL_DestroyWindow(window);
 }
 
 void Window::Draw() const{
