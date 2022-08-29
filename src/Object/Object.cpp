@@ -6,7 +6,7 @@ pos(p){
 }
 
 Object::~Object(){
-	SDL_DestroyTexture(this->txt);
+    if(txt) SDL_DestroyTexture(txt);
 }
 
 void Object::Move(glm::vec2 && v){
