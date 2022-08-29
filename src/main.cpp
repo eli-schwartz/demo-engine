@@ -7,6 +7,7 @@ int main(){
         SDL_Log("Unable to initialize SDL: %s", SDL_GetError());
         return 1;
     }
+    atexit(SDL_Quit);
 
 	auto e = std::make_unique<Engine>(800, 600);
 	auto c = std::make_shared<Ball>(glm::vec2(400, 300), 10);
