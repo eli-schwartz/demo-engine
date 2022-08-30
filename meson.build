@@ -14,11 +14,9 @@ source_files = [
 ]
 
 cmake = import('cmake')
-#sdl_proj = cmake.subproject('SDL')
 sdl = cmake.subproject('SDL').dependency('SDL2')
 glm = cmake.subproject('glm').dependency('glm')
 includes = include_directories([ 'subprojects/glm', 'subprojects/SDL/include' ])
-
 
 #message('cmake targets:\n -' + '\n -'.join(sdl_proj.target_list()))
 
@@ -26,10 +24,13 @@ engine = static_library('engine',
   sources: source_files,
   dependencies: [sdl, glm],
   include_directories: includes)
+
 enginedep = declare_dependency(link_with: engine)
+incdir = include_directories('subprojects')
 
 executable('demo',
   'src/main.cpp',
   dependencies: [ 
     enginedep
-    ])
+    ],
+  include_directories : incdir)
