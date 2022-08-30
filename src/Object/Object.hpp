@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../glm/glm/vec2.hpp"
+#include <glm/vec2.hpp>
 #include <SDL2/SDL.h>
 class Object {
 	protected:

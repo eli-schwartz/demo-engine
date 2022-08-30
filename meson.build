@@ -15,7 +15,8 @@ source_files = [
 
 
 sdl = dependency('sdl2')
+glm = dependency('glm')
 
 executable('demo',
   source_files,
-  dependencies: sdl)
+  dependencies: [sdl, glm])
