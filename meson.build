@@ -11,12 +11,21 @@ source_files = [
 'src/Engine/Engine.cpp',
 'src/Boundary/Boundary.cpp',
 'src/Ball/Ball.cpp',
-'src/Testing/Testing.cpp'
 ]
 
-sdl = dependency('sdl2')
+cmake = import('cmake')
+#sdl_proj = cmake.subproject('SDL')
+sdl = cmake.subproject('SDL').dependency('SDL2')
+glm = cmake.subproject('glm').dependency('glm')
+includes = include_directories([ 'subprojects/glm', 'subprojects/SDL/include' ])
 
-engine = static_library('engine', source_files, dependencies: sdl)
+
+#message('cmake targets:\n -' + '\n -'.join(sdl_proj.target_list()))
+
+engine = static_library('engine',
+  sources: source_files,
+  dependencies: [sdl, glm],
+  include_directories: includes)
 enginedep = declare_dependency(link_with: engine)
 
 executable('demo',
